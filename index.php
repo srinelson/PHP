@@ -80,8 +80,6 @@ include_once 'header.php'
 </div>
 
 
-
-
 <!--About-->
 
 <div class="about">
@@ -113,10 +111,6 @@ include_once 'header.php'
     </div>
 
 </div>
-
-
-
-
 
 <!--Books-->
 

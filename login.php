@@ -38,10 +38,10 @@
             </div>
 
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="Login.html">Login</a></li>
-                <li><a href="Review.html">Reviews</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="review.php">Reviews</a></li>
 
 
                 </div>

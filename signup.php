@@ -6,8 +6,6 @@ include_once 'header.php'
 #Database connection file 
 // include "db_conn.php";
 
-
-
 ?>
 
 <style>
