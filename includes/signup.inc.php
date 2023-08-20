@@ -33,10 +33,9 @@ mysqli_stmt_bind_param($stmt,"sss", $_POST["name"], $_POST["email"], $password_h
 
 $stmt->execute();
 
-echo "Signup Successful";
+header ("Location: ../signup-success.php") ;
+exit;
 
-header("refresh:3;url=http://localhost/Bookstore/login.php");
-exit; // Make sure to exit to prevent further script execution
 
 print_r($_POST);
 

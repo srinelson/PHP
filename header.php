@@ -24,31 +24,35 @@
 
 <body>
 
-    <section>
+    <header>
 
-        <nav>
+        <section>
 
-            <div class="logo">
-                <img src="image/logo.png">
-            </div>
+            <nav>
 
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="index.php">About</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="review.php">Reviews</a></li>
-
-
-                </div>
-                </div>
-            </ul>
-
-            <div class="social_icon">
-                <div class="search-container">
-                    <form action="/action_page.php">
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
+                <div class="logo">
+                    <img src="image/logo.png">
                 </div>
 
-        </nav>
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="index.php">About</a></li>
+                    <li><a href="login.php">Login</a></li>
+                    <li><a href="review.php">Reviews</a></li>
+
+
+                    </div>
+                    </div>
+                </ul>
+
+                <div class="social_icon">
+                    <div class="search-container">
+                        <form action="/action_page.php">
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+
+            </nav>
+
+    </header>

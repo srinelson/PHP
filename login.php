@@ -1,10 +1,25 @@
 <?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") { 
+    
+    $mysqli = require __DIR__ . "../includes/dbh.inc.php";
+    
+    $sql = sprintf("SELECT * FROM user 
+                    WHERE email = '%s'",
+                    $mysqli->real_escape_string($_POST["email"]));
 
-// session_start();
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc(); 
+    
+    if ($user) {
+        
+       if (password_verify ($_POST["password"], $user["password_hash"])) {
+            
+            die("Login succesful");
+        }
+    }
 
-// #Database connection file 
-// include "db_conn.php";
-
+}
 
 
 ?>
@@ -21,8 +36,6 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -79,28 +92,34 @@
 
                     <div class="right">
                         <h5>Login</h5>
-                        <p>Don't have an account? <a href="signup.php">Signup now.</a> </p>
-                        <div class="inputs">
-                            <input type="text" placeholder="user name">
+                        <form method="post">
+
                             <br>
-                            <input type="password" placeholder="password">
-                        </div>
+                            <p>Don't have an account? <a href="signup.php">Signup now.</a> </p>
+                            </br>
+                            <div class="inputs">
+                                <label for="email">Email</label>
+                                <input type="email" name="email">
+                                <br>
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password">
+                            </div>
 
-                        <br><br>
+                            <br><br>
 
-                        <div class="remember-me--forget-password">
-                            <!-- Angular -->
-                            <label>
-                                <input type="checkbox" name="item" checked />
-                                <span class="text-checkbox"> Remember me</span>
-                            </label>
-                            <p>forget password?</p>
-                        </div>
+                            <div class="remember-me--forget-password">
+                                <!-- Angular -->
+                                <label>
+                                    <input type="checkbox" name="item" checked />
+                                    <span class="text-checkbox"> Remember me</span>
+                                </label>
+                                <p>forget password?</p>
+                            </div>
 
-                        <br>
-                        <button>Login</button>
+                            <br>
+                            <button>Login</button>
                     </div>
-
+                    </form>
                 </div>
                 <!-- partial -->
 
