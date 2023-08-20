@@ -1,16 +1,22 @@
 <?php
 
-$servername = "localhost";
+
+$host = "localhost:3306";
+$dbname = "login_db";
 $username = "root";
 $password = "password";
-$dBName = "bookstore";
+
+
 
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password, $dBName);
+$conn = mysqli_connect($host, $username, $password, $dbname);
 
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+
+$mysqli = new mysqli($host, $username, $password, $dbname);
+
+if ($mysqli->connect_errno) {
+  die("Connection error: " . $mysqli->connect_error);
 }
-echo "Connected successfully";
+
+return $mysqli;

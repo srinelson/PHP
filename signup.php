@@ -58,19 +58,31 @@ body {
     background-color: #0056b3;
 }
 </style>
+
 </head>
 
 <body>
     <div class="signup-container">
         <h2>Sign Up</h2>
-        <form action="signup.inc.php" method="post">
-            <form>
-                <input type="text" class="signup-input" placeholder="Username" required>
-                <input type="email" class="signup-input" placeholder="Email" required>
-                <input type="password" class="signup-input" placeholder="Password" required>
-                <input type="password" class="signup-input" placeholder="Confirm Password" required>
-                <button type="submit" class="signup-button">Sign Up</button>
-            </form>
+        <form action="includes/signup.inc.php" method="post">
+
+
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div><label for="email">email</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <button>Sign Up</button>
+
+        </form>
     </div>
 </body>
 
